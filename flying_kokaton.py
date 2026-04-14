@@ -39,16 +39,7 @@ def main():
             l += 1
         kk_rct.move_ip((-l+r,-u+d))
 
-        # if key_lst[pg.K_UP]:
-            # kk_rct.move_ip((0,-1))
-        # elif key_lst[pg.K_DOWN]:
-            # kk_rct.move_ip((0,1))
-        # elif key_lst[pg.K_LEFT]:
-            # kk_rct.move_ip((-1,0))
-        # elif key_lst[pg.K_RIGHT]:
-            # kk_rct.move_ip((2,0))
-        # else:
-            # kk_rct.move_ip((-1,0))
+
         
         screen.blit(bg_img, [-x, 0]) #練習２
         screen.blit(bg_img2,[-x+1600,0]) #練習7
