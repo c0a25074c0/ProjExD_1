@@ -18,20 +18,37 @@ def main():
     tmr = 0
     while True:
         x = tmr%3200 #練習5
+        u = 0
+        d = 0
+        r = 0
+        l = 0
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed() #練習10-3
+        
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0,-1))
-        elif key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0,1))
-        elif key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
-        elif key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((2,0))
+            u += 1
+        if key_lst[pg.K_DOWN]:
+            d += 1
+        if key_lst[pg.K_LEFT]:
+            l += 1
+        if key_lst[pg.K_RIGHT]:
+            r += 1
         else:
-            kk_rct.move_ip((-1,0))
+            l += 1
+        kk_rct.move_ip((-l+r,-u+d))
+
+        # if key_lst[pg.K_UP]:
+            # kk_rct.move_ip((0,-1))
+        # elif key_lst[pg.K_DOWN]:
+            # kk_rct.move_ip((0,1))
+        # elif key_lst[pg.K_LEFT]:
+            # kk_rct.move_ip((-1,0))
+        # elif key_lst[pg.K_RIGHT]:
+            # kk_rct.move_ip((2,0))
+        # else:
+            # kk_rct.move_ip((-1,0))
         
         screen.blit(bg_img, [-x, 0]) #練習２
         screen.blit(bg_img2,[-x+1600,0]) #練習7
